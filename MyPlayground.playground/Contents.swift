@@ -155,26 +155,106 @@ if true{
 }
 print("=================")
 
-//if true{
-//}
-//print("=================")
-//
-//if true{
-//}
-//print("=================")
-//
-//if true{
-//}
-//print("=================")
-//
-//if true{
-//}
-//print("=================")
-//
-//if true{
-//}
-//print("=================")
-//
+if true{
+    let integerToDescribe = 5
+    var description = "The number \(integerToDescribe) is"
+    switch integerToDescribe {
+    case 2,3,5,7,11,13,17,19 :
+        description += " a prime number, and also"
+        fallthrough
+    case 444 :
+        description += " hogeeeee\n"
+        fallthrough
+    default:
+        description += " an integer"
+    }
+}
+print("=================")
+
+if true{
+    let finalSquare = 25
+    var board = [Int](repeating: 0,count: finalSquare + 1)
+    board[03] = +08;
+    board[06] = +11;
+    board[09] = +09;
+    board[10] = +02;
+    board[14] = -10;
+    board[19] = -11;
+    board[22] = -02;
+    board[24] = -08;
+    var square = 0
+    var diceRoll = 0
+
+    gameloop: while square != finalSquare {
+        diceRoll += 1
+        if diceRoll == 7 { diceRoll = 1 }
+        switch square + diceRoll {
+        case finalSquare:
+            break gameloop
+        case let newSquare where newSquare > finalSquare:
+            continue gameloop
+        default:
+            square += diceRoll
+            square += board[square]
+        }
+    }
+    print("Game over")
+
+}
+print("=================")
+
+if true{
+    func greet(person: [String:String]){
+        guard let name = person["name"] else {
+            return
+        }
+        print("Hello \(name)!")
+
+        guard let location = person["location"] else {
+            print("I hope the weather is nice near you")
+            return
+        }
+        print("I hope the weather is nice in \(location)")
+    }
+    greet(person: ["name":"John"])
+    greet(person: ["name":"John", "location":"Cuperion"])
+}
+print("=================")
+
+if true{
+    func minMax(array: [Int]) -> (min: Int,max: Int){
+        var currentMax = array[0]
+        var currentMin = array[0]
+        for value in array[1..<array.count]{
+            if value < currentMax{
+                currentMin = value
+            } else if value > currentMax {
+                currentMax = value
+            }
+        }
+        return (currentMin,currentMax)
+    }
+    let bounds = minMax(array: [1,2,3,4,5,-1,7,123])
+    print("min is \(bounds.min) and max is \(bounds.max)")
+
+}
+print("=================")
+
+if true{
+    func arithmeticMean(_ numbers: Double...) -> Double {
+        var total: Double = 0
+        for number in numbers {
+            total += number
+        }
+        return total / Double(numbers.count)
+    }
+
+    print(arithmeticMean(3.0,2.0,1.0,2.0,23.0,24.0,23.0))
+    print(arithmeticMean(3,8.25,13.24))
+
+}
+print("=================")
+
 //if true{
 //}
 //print("=================")
