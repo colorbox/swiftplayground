@@ -263,3 +263,92 @@ print("=================")
 //}
 //print("=================")
 //
+//if true{
+//}
+//print("=================")
+//
+//if true{
+//}
+//print("=================")
+//
+if true{
+    let names = ["A","B","V","Y"]
+    print(names.sorted(by: {$0 > $1}))
+    print(names.sorted(by:  < ))
+    print(names.sorted(){$0 > $1})
+}
+print("=================")
+
+if true{
+    func makeIncrementer(forIncrement amount: Int) -> () -> Int{
+        var runningTotal = 0
+        func incrementer() -> Int {
+            runningTotal += amount
+            return runningTotal
+        }
+        return incrementer
+    }
+
+    let incrementByTen = makeIncrementer(forIncrement: 10)
+    incrementByTen()
+    incrementByTen()
+    incrementByTen()
+
+    let incrementBySeven = makeIncrementer(forIncrement: 7)
+    incrementBySeven()
+    incrementBySeven()
+    incrementBySeven()
+
+    incrementByTen()
+    incrementByTen()
+
+}
+print("=================")
+
+if true{
+    var completionHandlers: [() -> Void] = []
+
+    func someFunctionWithEscapingClosure(completionHandler: @escaping () -> Void) {
+        completionHandlers.append(completionHandler)
+    }
+
+    func someFunctionWithNonescapingClosure(closure:() -> Void){
+        closure()
+    }
+
+    class SomeClass {
+        var x = 10
+        func doSomething() {
+            someFunctionWithEscapingClosure {self.x = 100 }
+            someFunctionWithNonescapingClosure { x = 200}
+        }
+    }
+    let instance = SomeClass()
+    instance.doSomething()
+    print(instance.x)
+
+    completionHandlers.first?()
+    print(instance.x)
+}
+print("=================")
+
+if true{
+    var customersInline = ["Ewa","Bery","Hoge"]
+    var customersProviders:[() -> String] = []
+    func collectCustomerProviders(_ customProvider: @autoclosure @escaping ()->String) {
+        customersProviders.append(customProvider)
+    }
+    collectCustomerProviders(customersInline.remove(at:0))
+    collectCustomerProviders(customersInline.remove(at:0))
+    print("collected \(customersProviders.count) closures")
+
+    for customerProvider in customersProviders {
+        print("Now serving \(customerProvider())!")
+    }
+}
+print("=================")
+
+//if true{
+//}
+//print("=================")
+//
