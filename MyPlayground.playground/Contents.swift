@@ -341,26 +341,59 @@
 //    }
 //}
 //print("=================")
-
-if true{
-    enum Barcode {
-        case upc(Int,Int,Int,Int)
-        case qrCode(String)
-    }
-    var productBarcode = Barcode.upc(8,85909,51226,3)
-    productBarcode = .qrCode("QWWWWWWERTY")
-    
-    switch productBarcode {
-    case .upc(let numberSystem, let manufacture, let product, let check):
-        print("\(numberSystem),\(manufacture),\(product),\(check),")
-    case .qrCode(let productCode):
-        print(productCode)
-    }
-    
-}
-print("=================")
-
+//
 //if true{
+//    enum Barcode {
+//        case upc(Int,Int,Int,Int)
+//        case qrCode(String)
+//    }
+//    var productBarcode = Barcode.upc(8,85909,51226,3)
+//    
+//    switch productBarcode {
+//    case .upc(let numberSystem, let manufacture, let product, let check):
+//        print("\(numberSystem),\(manufacture),\(product),\(check),")
+//    case .qrCode(let productCode):
+//        print(productCode)
+//    }
+//
+//    productBarcode = .qrCode("QWWWWWWERTY")
+//    
+//    switch productBarcode {
+//    case .upc(let numberSystem, let manufacture, let product, let check):
+//        print("\(numberSystem),\(manufacture),\(product),\(check),")
+//    case .qrCode(let productCode):
+//        print(productCode)
+//    }
+//    
+//}
+//print("=================")
+//
+//if true{
+//    enum ArithmeticExpression {
+//        case number(Int)
+//        indirect case addition(ArithmeticExpression,ArithmeticExpression)
+//        indirect case multiplication(ArithmeticExpression,ArithmeticExpression)
+//    }
+//    let five = ArithmeticExpression.number(5)
+//    let four = ArithmeticExpression.number(4)
+//    let three = ArithmeticExpression.number(3)
+//    let sum = ArithmeticExpression.addition(five, four)
+//    let two = ArithmeticExpression.number(2)
+//    let pro = ArithmeticExpression.multiplication(sum, two)
+//    
+//    func evaluate(_ expression: ArithmeticExpression)->Int{
+//        switch expression {
+//        case let .number(value):
+//            return value
+//        case let .addition(left, right):
+//            return evaluate(left) + evaluate(right)
+//        case let .multiplication(left, right):
+//            return evaluate(left) * evaluate(right)
+//        }
+//    }
+//    print("=")
+//    print(evaluate(pro))
+//    evaluate(pro)
 //}
 //print("=================")
 //
