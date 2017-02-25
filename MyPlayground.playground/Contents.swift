@@ -344,10 +344,24 @@ if true{
 }
 print("=================")
 
-//if true{
-//}
-//print("=================")
-//
+if true{
+    enum Barcode {
+        case upc(Int,Int,Int,Int)
+        case qrCode(String)
+    }
+    var productBarcode = Barcode.upc(8,85909,51226,3)
+    productBarcode = .qrCode("QWWWWWWERTY")
+    
+    switch productBarcode {
+    case .upc(let numberSystem, let manufacture, let product, let check):
+        print("\(numberSystem),\(manufacture),\(product),\(check),")
+    case .qrCode(let productCode):
+        print(productCode)
+    }
+    
+}
+print("=================")
+
 //if true{
 //}
 //print("=================")
