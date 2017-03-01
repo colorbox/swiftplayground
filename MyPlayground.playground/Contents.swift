@@ -398,11 +398,46 @@
 //print("=================")
 //
 //if true{
+//    class StepCounter {
+//        var totalSteps: Int = 0 {
+//            willSet {
+//                print(newValue)
+//            }
+//            didSet{
+//                if totalSteps > oldValue{
+//                    print(totalSteps - oldValue)
+//                }
+//            }
+//        }
+//    }
+//    let stepCounter = StepCounter()
+//    stepCounter.totalSteps = 200
+//    stepCounter.totalSteps = 360
+//    stepCounter.totalSteps = 660
 //}
 //print("=================")
 //
-//if true{
-//}
+if true{
+    struct AudioChannel {
+        static let thresholdLevel = 10
+        static var maxInputLevelForAllChannels = 0
+        var currentLevel: Int = 0 {
+            didSet {
+                if currentLevel > AudioChannel.thresholdLevel{
+                    currentLevel = AudioChannel.thresholdLevel
+                }
+                if currentLevel > AudioChannel.maxInputLevelForAllChannels{
+                    AudioChannel.maxInputLevelForAllChannels = currentLevel
+                }
+            }
+        }
+    }
+    var rightCh = AudioChannel()
+    var leftCh = AudioChannel()
+    rightCh.currentLevel = 110
+    print(rightCh.currentLevel)
+    print(AudioChannel.maxInputLevelForAllChannels)
+}
 //print("=================")
 //
 //if true{
