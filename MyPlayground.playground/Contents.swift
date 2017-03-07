@@ -441,12 +441,56 @@ if true{
 //print("=================")
 //
 //if true{
+//    struct FixedLengthRange {
+//        var firstValue: Int
+//        let length: Int
+//    }
+//    var rangeOfThreeItems = FixedLengthRange(firstValue: 0, length: 3)
+//    rangeOfThreeItems.firstValue = 6
 //}
 //print("=================")
 //
-//if true{
-//}
-//print("=================")
+if true{
+    
+    class Vehicle {
+        var currentSpeed = 0.0
+        func makeNoise(){
+            print("nnn")
+        }
+    }
+    
+    class Bicycle: Vehicle {
+
+        override func makeNoise() {
+            super.makeNoise()
+            print("noisy")
+        }
+        func hoge(){
+            super.makeNoise()
+        }
+    }
+    Bicycle().makeNoise()
+    
+    class Bicycle2: Vehicle {
+        
+        var huga:Int
+        override init() {
+            huga = 0// if you comment out this line compile get rage
+        }
+        
+        
+        override func makeNoise() {
+            super.makeNoise()
+            print("noisy")
+        }
+        func hoge(){
+            super.makeNoise()
+        }
+    }
+
+    
+}
+print("=================")
 //
 //if true{
 //}
