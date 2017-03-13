@@ -513,8 +513,20 @@
 //}
 //print("=================")
 //
-//if true{
-//}
+if true{
+    func funcHoge() -> String? {
+        var hoge:String?
+        hoge = "hoge"
+        return hoge
+    }
+    var hoge:String!
+    hoge = nil
+//    print(hoge)// this line is errpr
+    hoge = funcHoge()
+    print(hoge)
+    print(funcHoge())
+    
+}
 //print("=================")
 //
 //if true{
