@@ -417,27 +417,27 @@
 //}
 //print("=================")
 //
-if true{
-    struct AudioChannel {
-        static let thresholdLevel = 10
-        static var maxInputLevelForAllChannels = 0
-        var currentLevel: Int = 0 {
-            didSet {
-                if currentLevel > AudioChannel.thresholdLevel{
-                    currentLevel = AudioChannel.thresholdLevel
-                }
-                if currentLevel > AudioChannel.maxInputLevelForAllChannels{
-                    AudioChannel.maxInputLevelForAllChannels = currentLevel
-                }
-            }
-        }
-    }
-    var rightCh = AudioChannel()
-    var leftCh = AudioChannel()
-    rightCh.currentLevel = 110
-    print(rightCh.currentLevel)
-    print(AudioChannel.maxInputLevelForAllChannels)
-}
+//if true{
+//    struct AudioChannel {
+//        static let thresholdLevel = 10
+//        static var maxInputLevelForAllChannels = 0
+//        var currentLevel: Int = 0 {
+//            didSet {
+//                if currentLevel > AudioChannel.thresholdLevel{
+//                    currentLevel = AudioChannel.thresholdLevel
+//                }
+//                if currentLevel > AudioChannel.maxInputLevelForAllChannels{
+//                    AudioChannel.maxInputLevelForAllChannels = currentLevel
+//                }
+//            }
+//        }
+//    }
+//    var rightCh = AudioChannel()
+//    var leftCh = AudioChannel()
+//    rightCh.currentLevel = 110
+//    print(rightCh.currentLevel)
+//    print(AudioChannel.maxInputLevelForAllChannels)
+//}
 //print("=================")
 //
 //if true{
@@ -450,49 +450,66 @@ if true{
 //}
 //print("=================")
 //
-if true{
-    
-    class Vehicle {
-        var currentSpeed = 0.0
-        func makeNoise(){
-            print("nnn")
-        }
-    }
-    
-    class Bicycle: Vehicle {
-
-        override func makeNoise() {
-            super.makeNoise()
-            print("noisy")
-        }
-        func hoge(){
-            super.makeNoise()
-        }
-    }
-    Bicycle().makeNoise()
-    
-    class Bicycle2: Vehicle {
-        
-        var huga:Int
-        override init() {
-            huga = 0// if you comment out this line compile get rage
-        }
-        
-        
-        override func makeNoise() {
-            super.makeNoise()
-            print("noisy")
-        }
-        func hoge(){
-            super.makeNoise()
-        }
-    }
-
-    
-}
-print("=================")
+//if true{
+//    
+//    class Vehicle {
+//        var currentSpeed = 0.0
+//        func makeNoise(){
+//            print("nnn")
+//        }
+//    }
+//    
+//    class Bicycle: Vehicle {
+//
+//        override func makeNoise() {
+//            super.makeNoise()
+//            print("noisy")
+//        }
+//        func hoge(){
+//            super.makeNoise()
+//        }
+//    }
+//    Bicycle().makeNoise()
+//    
+//    class Bicycle2: Vehicle {
+//        
+//        var huga:Int
+//        override init() {
+//            huga = 0// if you comment out this line compile get rage
+//        }
+//        
+//        
+//        override func makeNoise() {
+//            super.makeNoise()
+//            print("noisy")
+//        }
+//        func hoge(){
+//            super.makeNoise()
+//        }
+//    }
+//
+//    
+//}
+//print("=================")
 //
 //if true{
+//    class Vehicle {
+//        var numberOfWheels = 0
+//        var description: String {
+//            return "\(numberOfWheels) wheel"
+//        }
+//    }
+//    class Bicycle: Vehicle {
+//        override init(){
+//            super.init()
+//            numberOfWheels = 2
+//        }
+//    }
+//    let vehicle = Vehicle()
+//    print(vehicle.description)
+//    let bicycle = Bicycle()
+//    print(bicycle.description)
+//    
 //}
 //print("=================")
 //
