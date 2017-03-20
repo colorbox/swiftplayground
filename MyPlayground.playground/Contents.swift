@@ -513,24 +513,72 @@
 //}
 //print("=================")
 //
+//if true{
+//    func funcHoge() -> String? {
+//        var hoge:String?
+//        hoge = "hoge"
+//        return hoge
+//    }
+//    var hoge:String!
+//    hoge = nil
+////    print(hoge)// this line is errpr
+//    hoge = funcHoge()
+//    print(hoge)
+//    print(funcHoge())
+//    
+//}
+print("=================")
+
 if true{
-    func funcHoge() -> String? {
-        var hoge:String?
-        hoge = "hoge"
-        return hoge
+    
+    class Food{
+        var name:String
+        init(name :String){
+            print("Food,\(#function)")
+            self.name = name
+        }
+        convenience init() {
+            print("Food,\(#function)")
+            self.init(name:"[unnamed]")
+        }
+        
     }
-    var hoge:String!
-    hoge = nil
-//    print(hoge)// this line is errpr
-    hoge = funcHoge()
-    print(hoge)
-    print(funcHoge())
+    
+    class RecipeIngredient: Food{
+        var quantity: Int
+        
+        init(name:String,quantity:Int) {
+            print("RecipeIngredient,\(#function)")
+            self.quantity = quantity
+            super.init(name:name)
+        }
+        
+        override convenience init(name:String){
+            self.init(name:name,quantity:1)
+        }
+    }
+
+//    RecipeIngredient(name:"hoge",quantity:2)
+    
+    class ShoppingListItem:RecipeIngredient{
+        var purchased = false
+        var description: String{
+            var output = "\(quantity) x \(name) "
+            output += purchased ? "✓" : "✘"
+            return output
+        }
+    }
+    
+    var breakfastList = [
+        ShoppingListItem(),
+        ShoppingListItem(name:"hoge1"),
+        ShoppingListItem(name:"hoge2",quantity:114514)
+    ]
+    for item in breakfastList{
+        print(item.description)
+    }
     
 }
-//print("=================")
-//
-//if true{
-//}
 //print("=================")
 //
 //if true{
